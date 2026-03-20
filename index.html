@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beat Catalog</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://unpkg.com/wavesurfer.js"></script>
+
+</head>
+
+<body oncontextmenu="return false;">
+
+<div class="container">
+
+<header>
+
+<h1>🎧 Beat Catalog</h1>
+<p class="subtitle">Instrumentales disponibles para licencia</p>
+
+</header>
+
+<div class="player">
+
+<h2 id="title">Selecciona un Beat</h2>
+<p id="meta">BPM • KEY • TYPE</p>
+
+<div id="waveform"></div>
+
+<div class="controls">
+
+<button id="playBtn">▶</button>
+
+<span id="time">0:00</span>
+
+</div>
+
+</div>
+
+<div class="tracklist">
+
+<div class="track"
+data-src="beats/beat1.mp3"
+data-title="Dark Drill Beat"
+data-meta="140 BPM • C Minor • Drill">
+
+<button class="play">▶</button>
+
+<div class="info">
+<strong>Dark Drill Beat</strong>
+<span>140 BPM • C Minor • Drill</span>
+</div>
+
+<a href="mailto:tucorreo@email.com" class="license">
+Licenciar
+</a>
+
+</div>
+
+<div class="track"
+data-src="beats/beat2.mp3"
+data-title="Boom Bap Classic"
+data-meta="92 BPM • G Minor • Boom Bap">
+
+<button class="play">▶</button>
+
+<div class="info">
+<strong>Boom Bap Classic</strong>
+<span>92 BPM • G Minor • Boom Bap</span>
+</div>
+
+<a href="mailto:tucorreo@email.com" class="license">
+Licenciar
+</a>
+
+</div>
+
+<div class="track"
+data-src="beats/beat3.mp3"
+data-title="Trap Night"
+data-meta="150 BPM • D# Minor • Trap">
+
+<button class="play">▶</button>
+
+<div class="info">
+<strong>Trap Night</strong>
+<span>150 BPM • D# Minor • Trap</span>
+</div>
+
+<a href="mailto:tucorreo@email.com" class="license">
+Licenciar
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>© 2026 Beat Catalog</p>
+
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
