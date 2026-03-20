@@ -3,7 +3,8 @@ const wavesurfer = WaveSurfer.create({
 container:"#waveform",
 waveColor:"#444",
 progressColor:"#1db954",
-height:80
+height:80,
+responsive:true
 
 })
 
@@ -14,7 +15,7 @@ const title = document.getElementById("title")
 const meta = document.getElementById("meta")
 const time = document.getElementById("time")
 
-let playing=false
+let loaded = false
 
 tracks.forEach(track=>{
 
@@ -25,26 +26,38 @@ track.classList.add("active")
 
 const src = track.dataset.src
 
-wavesurfer.load(src)
-
 title.innerText = track.dataset.title
 meta.innerText = track.dataset.meta
 
+loaded = false
+
+wavesurfer.load(src)
+
 })
+
+})
+
+wavesurfer.on("ready",()=>{
+
+loaded = true
+wavesurfer.play()
+playBtn.innerText="⏸"
 
 })
 
 playBtn.addEventListener("click",()=>{
 
-if(!wavesurfer.isPlaying()){
+if(!loaded) return
 
-wavesurfer.play()
-playBtn.innerText="⏸"
-
-}else{
+if(wavesurfer.isPlaying()){
 
 wavesurfer.pause()
 playBtn.innerText="▶"
+
+}else{
+
+wavesurfer.play()
+playBtn.innerText="⏸"
 
 }
 
@@ -52,13 +65,13 @@ playBtn.innerText="▶"
 
 wavesurfer.on("audioprocess",()=>{
 
-let current = wavesurfer.getCurrentTime()
+const current = wavesurfer.getCurrentTime()
 
 let minutes = Math.floor(current/60)
 let seconds = Math.floor(current%60)
 
-if(seconds<10)seconds="0"+seconds
+if(seconds<10) seconds="0"+seconds
 
-time.innerText=minutes+":"+seconds
+time.innerText = minutes + ":" + seconds
 
 })
