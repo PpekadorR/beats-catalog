@@ -2,13 +2,15 @@
 <html lang="es">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Beat Catalog</title>
 
 <link rel="stylesheet" href="style.css">
 
-<script src="https://unpkg.com/wavesurfer.js"></script>
+<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css"/>
 
 </head>
 
@@ -16,47 +18,31 @@
 
 <div class="container">
 
-<header>
-
 <h1>🎧 Beat Catalog</h1>
 <p class="subtitle">Instrumentales disponibles para licencia</p>
 
-</header>
-
 <div class="player">
 
-<h2 id="title">Selecciona un Beat</h2>
-<p id="meta">BPM • KEY • TYPE</p>
+<audio id="player" controls controlsList="nodownload">
+<source src="beats/beat1.mp3" type="audio/mp3">
+</audio>
 
-<div id="waveform"></div>
-
-<div class="controls">
-
-<button id="playBtn">▶</button>
-
-<span id="time">0:00</span>
-
-</div>
+<h2 id="title">Dark Drill Beat</h2>
+<p id="meta">140 BPM • C Minor • Drill</p>
 
 </div>
 
 <div class="tracklist">
 
 <div class="track"
-data-src="beats/beat11.mp3"
-data-title="Beat 1 - Cypress Hill Type"
-data-meta="84BPM • C Minor • Boombap">
+data-src="beats/beat1.mp3"
+data-title="Dark Drill Beat"
+data-meta="140 BPM • C Minor • Drill">
 
-<button class="play">▶</button>
+▶ Dark Drill Beat
+<span>140 BPM • C Minor • Drill</span>
 
-<div class="info">
-<strong>Cypress Hill Type</strong>
-<span>84 BPM • C Minor • Boombap</span>
-</div>
-
-<a href="mailto:tucorreo@email.com" class="license">
-Licenciar
-</a>
+<a href="mailto:tucorreo@email.com">Licenciar</a>
 
 </div>
 
@@ -65,16 +51,10 @@ data-src="beats/beat2.mp3"
 data-title="Boom Bap Classic"
 data-meta="92 BPM • G Minor • Boom Bap">
 
-<button class="play">▶</button>
-
-<div class="info">
-<strong>Boom Bap Classic</strong>
+▶ Boom Bap Classic
 <span>92 BPM • G Minor • Boom Bap</span>
-</div>
 
-<a href="mailto:tucorreo@email.com" class="license">
-Licenciar
-</a>
+<a href="mailto:tucorreo@email.com">Licenciar</a>
 
 </div>
 
@@ -83,29 +63,18 @@ data-src="beats/beat3.mp3"
 data-title="Trap Night"
 data-meta="150 BPM • D# Minor • Trap">
 
-<button class="play">▶</button>
-
-<div class="info">
-<strong>Trap Night</strong>
+▶ Trap Night
 <span>150 BPM • D# Minor • Trap</span>
-</div>
 
-<a href="mailto:tucorreo@email.com" class="license">
-Licenciar
-</a>
+<a href="mailto:tucorreo@email.com">Licenciar</a>
 
 </div>
 
 </div>
 
-<footer>
-
-<p>© 2026 PpekadorR</p>
-
-</footer>
-
 </div>
 
+<script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
 <script src="script.js"></script>
 
 </body>
