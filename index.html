@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beat Catalog</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎧 Beat Catalog</h1>
+
+<div class="player">
+
+<h2 id="title">Cargando...</h2>
+<p id="meta">---</p>
+
+<audio id="audio" controls></audio>
+
+</div>
+
+<div class="tracklist">
+
+<div class="track" onclick="loadTrack(0)">
+▶ Dark Drill Beat
+<span>140 BPM • C Minor • Drill</span>
+</div>
+
+<div class="track" onclick="loadTrack(1)">
+▶ Boom Bap Classic
+<span>92 BPM • G Minor • Boom Bap</span>
+</div>
+
+<div class="track" onclick="loadTrack(2)">
+▶ Trap Night
+<span>150 BPM • D# Minor • Trap</span>
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
