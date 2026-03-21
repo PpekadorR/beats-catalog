@@ -6,8 +6,8 @@ let playing = false
 const tracks = [
 {
 src: "beats/beat1.mp3",
-title: "Dark Drill Beat",
-meta: "140 BPM • C Minor • Drill"
+title: "Akwid Type",
+meta: "94 BPM • C Minor • Boombap"
 },
 {
 src: "beats/beat2.mp3",
