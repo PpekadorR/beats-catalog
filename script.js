@@ -1,76 +1,38 @@
 const audio = document.getElementById("audio")
 
-const title = document.getElementById("title")
-const meta = document.getElementById("meta")
-
-const current = document.getElementById("current")
-const duration = document.getElementById("duration")
-
-const tracks = document.querySelectorAll(".track")
-
-let currentIndex = 0
+const tracks = [
+{
+src: "beats/beat1.mp3",
+title: "Dark Drill Beat",
+meta: "140 BPM • C Minor • Drill"
+},
+{
+src: "beats/beat2.mp3",
+title: "Boom Bap Classic",
+meta: "92 BPM • G Minor • Boom Bap"
+},
+{
+src: "beats/beat3.mp3",
+title: "Trap Night",
+meta: "150 BPM • D# Minor • Trap"
+}
+]
 
 function loadTrack(index){
 
 const track = tracks[index]
 
-tracks.forEach(t=>t.classList.remove("active"))
-track.classList.add("active")
+// CAMBIO CLAVE: asignar directo
+audio.src = track.src
 
-audio.src = track.dataset.src
+document.getElementById("title").innerText = track.title
+document.getElementById("meta").innerText = track.meta
 
-title.innerText = track.dataset.title
-meta.innerText = track.dataset.meta
-
-audio.load()
-audio.play()
-
-currentIndex = index
+audio.play().catch(()=>{})
 
 }
 
-tracks.forEach((track,index)=>{
-
-track.addEventListener("click",()=>{
-
-loadTrack(index)
-
-})
-
-})
-
-audio.addEventListener("timeupdate",()=>{
-
-let cur = audio.currentTime
-let dur = audio.duration
-
-if(!isNaN(dur)){
-
-let cm = Math.floor(cur/60)
-let cs = Math.floor(cur%60)
-
-let dm = Math.floor(dur/60)
-let ds = Math.floor(dur%60)
-
-if(cs<10) cs="0"+cs
-if(ds<10) ds="0"+ds
-
-current.innerText = cm+":"+cs
-duration.innerText = dm+":"+ds
-
-}
-
-})
-
-audio.addEventListener("ended",()=>{
-
-let next = currentIndex + 1
-
-if(next < tracks.length){
-loadTrack(next)
-}
-
-})
-
-/* carga el primero automáticamente */
+// cargar el primero al iniciar
+window.onload = ()=>{
 loadTrack(0)
+}
