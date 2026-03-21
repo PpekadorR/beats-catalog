@@ -21,13 +21,13 @@ let currentIndex = 0
 
 const tracks = [
 {
-title:"Dark Drill Beat",
-meta:"140 BPM • C Minor • Drill",
+title:"Akwid Type",
+meta:"94 BPM • G Minor • Boom Bap",
 src:"beats/beat1.mp3"
 },
 {
-title:"Boom Bap Classic",
-meta:"92 BPM • G Minor • Boom Bap",
+title:"Silent Pain",
+meta:"90 BPM • B Minor • Boom Bap",
 src:"beats/beat2.mp3"
 },
 {
