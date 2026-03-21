@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Beat Catalog</title>
 
@@ -19,10 +19,12 @@
 
 <div class="player">
 
-<h2 id="title">Selecciona un beat</h2>
-<p id="meta">BPM • KEY • TYPE</p>
+<h2 id="title">Dark Drill Beat</h2>
+<p id="meta">140 BPM • C Minor • Drill</p>
 
-<audio id="audio" controls controlsList="nodownload"></audio>
+<audio id="audio" controls controlsList="nodownload">
+    <source src="beats/beat1.mp3" type="audio/mpeg">
+</audio>
 
 <div class="time">
 <span id="current">0:00</span> / <span id="duration">0:00</span>
@@ -33,33 +35,21 @@
 <div class="tracklist">
 
 <div class="track active"
-data-src="beats/beat1.mp3"
-data-title="Dark Drill Beat"
-data-meta="140 BPM • C Minor • Drill">
-
+onclick="loadTrack(0)">
 ▶ Dark Drill Beat
 <span>140 BPM • C Minor • Drill</span>
-
 </div>
 
 <div class="track"
-data-src="beats/beat2.mp3"
-data-title="Boom Bap Classic"
-data-meta="92 BPM • G Minor • Boom Bap">
-
+onclick="loadTrack(1)">
 ▶ Boom Bap Classic
 <span>92 BPM • G Minor • Boom Bap</span>
-
 </div>
 
 <div class="track"
-data-src="beats/beat3.mp3"
-data-title="Trap Night"
-data-meta="150 BPM • D# Minor • Trap">
-
+onclick="loadTrack(2)">
 ▶ Trap Night
 <span>150 BPM • D# Minor • Trap</span>
-
 </div>
 
 </div>
