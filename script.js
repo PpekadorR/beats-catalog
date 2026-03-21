@@ -1,31 +1,14 @@
-const player = new Plyr('#player')
+function playBeat(src,title,meta){
 
-const tracks = document.querySelectorAll(".track")
+const player = document.getElementById("audioPlayer")
+const source = document.getElementById("audioSource")
 
-const title = document.getElementById("title")
-const meta = document.getElementById("meta")
+source.src = src
 
-tracks.forEach(track=>{
-
-track.addEventListener("click",()=>{
-
-const src = track.dataset.src
-
-player.source = {
-type: 'audio',
-sources: [
-{
-src: src,
-type: 'audio/mp3',
-},
-],
-}
-
-title.innerText = track.dataset.title
-meta.innerText = track.dataset.meta
-
+player.load()
 player.play()
 
-})
+document.getElementById("title").innerText = title
+document.getElementById("meta").innerText = meta
 
-})
+}
