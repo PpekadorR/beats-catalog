@@ -39,6 +39,21 @@ src:"beats/beat3.mp3"
 title:"Flow 2000",
 meta:"95 BPM • F Minor • Reggaeton",
 src:"beats/beat4.mp3"
+},
+{
+title:"Ghost Chords",
+meta:"89 BPM • F# Minor • Boom Bap",
+src:"beats/beat5.mp3"
+},
+{
+title:"Key Pressure",
+meta:"89 BPM • E Minor • Boom Bap",
+src:"beats/beat6.mp3"
+},
+{
+title:"Heart in 808",
+meta:"143 BPM • B Major • Trap",
+src:"beats/beat7.mp3"
 }
 ]
 
