@@ -14,37 +14,38 @@
 
 <div class="container">
 
-<h1>Beats Disponibles</h1>
+<h1>🎧 Beat Catalog</h1>
 
-<div class="player">
+<input type="text" id="search" placeholder="Buscar beats...">
 
-<h2 id="title">Cargando...</h2>
+<div id="tracklist" class="tracklist"></div>
+
+</div>
+
+<!-- PLAYER FIJO -->
+<div class="player-fixed">
+
+<div class="info">
+<h3 id="title">---</h3>
 <p id="meta">---</p>
+</div>
 
-<button id="playBtn">▶ Play</button>
+<div class="controls">
+
+<button id="prev">⏮</button>
+<button id="play">▶</button>
+<button id="next">⏭</button>
+
+</div>
+
+<input type="range" id="progress" value="0">
+<div class="time">
+<span id="current">0:00</span> / <span id="duration">0:00</span>
+</div>
+
+<input type="range" id="volume" min="0" max="1" step="0.01">
 
 <audio id="audio"></audio>
-
-</div>
-
-<div class="tracklist">
-
-<div class="track" onclick="loadTrack(0)">
-▶ Akwid Type
-<span>94 BPM • G Minor • Boombap</span>
-</div>
-
-<div class="track" onclick="loadTrack(1)">
-▶ Silent Pain
-<span>90 BPM • B Minor • Boombap</span>
-</div>
-
-<div class="track" onclick="loadTrack(2)">
-▶ Trap Night
-<span>150 BPM • D# Minor • Trap</span>
-</div>
-
-</div>
 
 </div>
 
