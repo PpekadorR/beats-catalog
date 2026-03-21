@@ -31,8 +31,8 @@ meta:"90 BPM • B Minor • Boom Bap",
 src:"beats/beat2.mp3"
 },
 {
-title:"Trap Night",
-meta:"150 BPM • D# Minor • Trap",
+title:"The Low End Swamp",
+meta:"86 BPM • F# Minor • Boom Bap",
 src:"beats/beat3.mp3"
 }
 ]
