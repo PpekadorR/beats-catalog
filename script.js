@@ -1,4 +1,7 @@
 const audio = document.getElementById("audio")
+const playBtn = document.getElementById("playBtn")
+
+let playing = false
 
 const tracks = [
 {
@@ -28,8 +31,26 @@ document.getElementById("title").innerText = track.title
 document.getElementById("meta").innerText = track.meta
 
 audio.play().catch(()=>{})
+playing = true
+playBtn.innerText = "⏸ Pause"
 
 }
+
+playBtn.addEventListener("click",()=>{
+
+if(!audio.src) return
+
+if(playing){
+audio.pause()
+playBtn.innerText="▶ Play"
+}else{
+audio.play()
+playBtn.innerText="⏸ Pause"
+}
+
+playing = !playing
+
+})
 
 window.onload = ()=>{
 loadTrack(0)
