@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 
 <meta charset="UTF-8">
@@ -8,49 +7,11 @@
 
 <title>Beat Catalog</title>
 
-<style>
-
-body{
-background:#0e0e0e;
-color:white;
-font-family:Arial;
-margin:0;
-padding:30px;
-}
-
-.container{
-max-width:700px;
-margin:auto;
-}
-
-.player{
-margin-bottom:30px;
-}
-
-.track{
-padding:15px;
-border-bottom:1px solid #333;
-cursor:pointer;
-}
-
-.track:hover{
-background:#1a1a1a;
-}
-
-.meta{
-color:#888;
-font-size:13px;
-}
-
-h1{
-margin-bottom:30px;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
-<body>
+<body oncontextmenu="return false;">
 
 <div class="container">
 
@@ -58,59 +19,54 @@ margin-bottom:30px;
 
 <div class="player">
 
-<audio id="audioPlayer" controls style="width:100%">
-<source id="audioSource" src="beats/beat1.mp3" type="audio/mpeg">
-</audio>
+<h2 id="title">Selecciona un beat</h2>
+<p id="meta">BPM • KEY • TYPE</p>
 
-<h2 id="title">Dark Drill Beat</h2>
-<p class="meta" id="meta">140 BPM • C Minor • Drill</p>
+<audio id="audio" controls controlsList="nodownload"></audio>
+
+<div class="time">
+<span id="current">0:00</span> / <span id="duration">0:00</span>
+</div>
+
+</div>
+
+<div class="tracklist">
+
+<div class="track active"
+data-src="beats/beat1.mp3"
+data-title="Dark Drill Beat"
+data-meta="140 BPM • C Minor • Drill">
+
+▶ Dark Drill Beat
+<span>140 BPM • C Minor • Drill</span>
 
 </div>
 
 <div class="track"
-onclick="playBeat('beats/beat1.mp3','Dark Drill Beat','140 BPM • C Minor • Drill')">
+data-src="beats/beat2.mp3"
+data-title="Boom Bap Classic"
+data-meta="92 BPM • G Minor • Boom Bap">
 
-<strong>Dark Drill Beat</strong>
-<div class="meta">140 BPM • C Minor • Drill</div>
-
-</div>
-
-<div class="track"
-onclick="playBeat('beats/beat2.mp3','Boom Bap Classic','92 BPM • G Minor • Boom Bap')">
-
-<strong>Boom Bap Classic</strong>
-<div class="meta">92 BPM • G Minor • Boom Bap</div>
+▶ Boom Bap Classic
+<span>92 BPM • G Minor • Boom Bap</span>
 
 </div>
 
 <div class="track"
-onclick="playBeat('beats/beat3.mp3','Trap Night','150 BPM • D# Minor • Trap')">
+data-src="beats/beat3.mp3"
+data-title="Trap Night"
+data-meta="150 BPM • D# Minor • Trap">
 
-<strong>Trap Night</strong>
-<div class="meta">150 BPM • D# Minor • Trap</div>
+▶ Trap Night
+<span>150 BPM • D# Minor • Trap</span>
 
 </div>
 
 </div>
 
-<script>
+</div>
 
-function playBeat(src,title,meta){
-
-const player = document.getElementById("audioPlayer")
-const source = document.getElementById("audioSource")
-
-source.src = src
-
-player.load()
-player.play()
-
-document.getElementById("title").innerText = title
-document.getElementById("meta").innerText = meta
-
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
