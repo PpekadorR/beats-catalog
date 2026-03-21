@@ -1,9 +1,10 @@
 body{
-background:#0b0b0b;
+background:#0a0a0a;
 color:white;
 font-family:Arial;
 margin:0;
-padding:30px;
+padding:20px;
+padding-bottom:160px;
 }
 
 .container{
@@ -11,16 +12,20 @@ max-width:800px;
 margin:auto;
 }
 
-.player{
-background:#151515;
-padding:20px;
-border-radius:12px;
-margin-bottom:30px;
+#search{
+width:100%;
+padding:10px;
+margin-bottom:20px;
+border:none;
+border-radius:8px;
+background:#1a1a1a;
+color:white;
 }
 
-audio{
-width:100%;
-margin-top:10px;
+.tracklist{
+background:#111;
+border-radius:10px;
+overflow:hidden;
 }
 
 .track{
@@ -34,22 +39,47 @@ background:#1a1a1a;
 }
 
 .track span{
-display:block;
 font-size:13px;
 color:#888;
+display:block;
 }
 
-#playBtn{
+.active{
+background:#1db95433;
+}
+
+/* PLAYER FIJO */
+
+.player-fixed{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:#121212;
+padding:15px;
+box-shadow:0 -2px 10px rgba(0,0,0,0.5);
+}
+
+.controls button{
 background:#1db954;
 border:none;
 color:white;
-padding:12px 20px;
-border-radius:30px;
+padding:8px 12px;
+margin:5px;
+border-radius:50px;
 cursor:pointer;
-font-size:16px;
+}
+
+#progress{
+width:100%;
+}
+
+#volume{
+width:100%;
 margin-top:10px;
 }
 
-#playBtn:hover{
-background:#17a74a;
+.time{
+font-size:12px;
+color:#aaa;
 }
