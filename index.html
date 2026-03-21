@@ -6,76 +6,111 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Catalogo de beats disponibles</title>
+<title>Beat Catalog</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
 
-<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css"/>
+body{
+background:#0e0e0e;
+color:white;
+font-family:Arial;
+margin:0;
+padding:30px;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+}
+
+.player{
+margin-bottom:30px;
+}
+
+.track{
+padding:15px;
+border-bottom:1px solid #333;
+cursor:pointer;
+}
+
+.track:hover{
+background:#1a1a1a;
+}
+
+.meta{
+color:#888;
+font-size:13px;
+}
+
+h1{
+margin-bottom:30px;
+}
+
+</style>
 
 </head>
 
-<body oncontextmenu="return false;">
+<body>
 
 <div class="container">
 
-<h1>Catalogo de beats disponible</h1>
-<p class="subtitle">Instrumentales disponibles para licencia</p>
+<h1>🎧 Beat Catalog</h1>
 
 <div class="player">
 
-<audio id="player" controls controlsList="nodownload">
-<source src="beats/beat1.mp3" type="audio/mp3">
+<audio id="audioPlayer" controls style="width:100%">
+<source id="audioSource" src="beats/beat1.mp3" type="audio/mpeg">
 </audio>
 
 <h2 id="title">Dark Drill Beat</h2>
-<p id="meta">140 BPM • C Minor • Drill</p>
-
-</div>
-
-<div class="tracklist">
-
-<div class="track"
-data-src="beats/beat1.mp3"
-data-title="Dark Drill Beat"
-data-meta="140 BPM • C Minor • Drill">
-
-▶ Dark Drill Beat
-<span>140 BPM • C Minor • Drill</span>
-
-<a href="mailto:tucorreo@email.com">Licenciar</a>
+<p class="meta" id="meta">140 BPM • C Minor • Drill</p>
 
 </div>
 
 <div class="track"
-data-src="beats/beat2.mp3"
-data-title="Boom Bap Classic"
-data-meta="92 BPM • G Minor • Boom Bap">
+onclick="playBeat('beats/beat1.mp3','Dark Drill Beat','140 BPM • C Minor • Drill')">
 
-▶ Boom Bap Classic
-<span>92 BPM • G Minor • Boom Bap</span>
-
-<a href="mailto:tucorreo@email.com">Licenciar</a>
+<strong>Dark Drill Beat</strong>
+<div class="meta">140 BPM • C Minor • Drill</div>
 
 </div>
 
 <div class="track"
-data-src="beats/beat3.mp3"
-data-title="Trap Night"
-data-meta="150 BPM • D# Minor • Trap">
+onclick="playBeat('beats/beat2.mp3','Boom Bap Classic','92 BPM • G Minor • Boom Bap')">
 
-▶ Trap Night
-<span>150 BPM • D# Minor • Trap</span>
+<strong>Boom Bap Classic</strong>
+<div class="meta">92 BPM • G Minor • Boom Bap</div>
 
-<a href="mailto:tucorreo@email.com">Licenciar</a>
+</div>
+
+<div class="track"
+onclick="playBeat('beats/beat3.mp3','Trap Night','150 BPM • D# Minor • Trap')">
+
+<strong>Trap Night</strong>
+<div class="meta">150 BPM • D# Minor • Trap</div>
 
 </div>
 
 </div>
 
-</div>
+<script>
 
-<script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
-<script src="script.js"></script>
+function playBeat(src,title,meta){
+
+const player = document.getElementById("audioPlayer")
+const source = document.getElementById("audioSource")
+
+source.src = src
+
+player.load()
+player.play()
+
+document.getElementById("title").innerText = title
+document.getElementById("meta").innerText = meta
+
+}
+
+</script>
 
 </body>
 </html>
