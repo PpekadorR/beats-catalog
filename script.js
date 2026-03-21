@@ -11,8 +11,8 @@ meta: "94 BPM • G Minor • Boombap"
 },
 {
 src: "beats/beat2.mp3",
-title: "Boom Bap Classic",
-meta: "92 BPM • G Minor • Boom Bap"
+title: "Silent Pain",
+meta: "90 BPM • B Minor • Boom Bap"
 },
 {
 src: "beats/beat3.mp3",
