@@ -7,7 +7,7 @@ const tracks = [
 {
 src: "beats/beat1.mp3",
 title: "Akwid Type",
-meta: "94 BPM • C Minor • Boombap"
+meta: "94 BPM • G Minor • Boombap"
 },
 {
 src: "beats/beat2.mp3",
