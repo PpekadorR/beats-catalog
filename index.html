@@ -16,8 +16,15 @@
 
 <h1>Beats Disponibles</h1>
 <h2>PpekadorR En El Beat</h2>
-
+  
 <input type="text" id="search" placeholder="Buscar beats...">
+
+<select id="genreFilter">
+<option value="">Todos los géneros</option>
+<option value="Rap">Rap</option>
+<option value="Reggaeton">Reggaeton</option>
+<option value="Trap">Trap</option>
+</select>
 
 <div id="tracklist" class="tracklist"></div>
 
@@ -32,14 +39,13 @@
 </div>
 
 <div class="controls">
-
 <button id="prev">⏮</button>
 <button id="play">▶</button>
 <button id="next">⏭</button>
-
 </div>
 
 <input type="range" id="progress" value="0">
+
 <div class="time">
 <span id="current">0:00</span> / <span id="duration">0:00</span>
 </div>
