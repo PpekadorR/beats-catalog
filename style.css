@@ -12,10 +12,14 @@ max-width:800px;
 margin:auto;
 }
 
-#search{
+h1{
+margin-bottom:15px;
+}
+
+#search, #genreFilter{
 width:100%;
 padding:10px;
-margin-bottom:20px;
+margin-bottom:15px;
 border:none;
 border-radius:8px;
 background:#1a1a1a;
@@ -48,7 +52,7 @@ display:block;
 background:#1db95433;
 }
 
-/* PLAYER FIJO */
+/* PLAYER */
 
 .player-fixed{
 position:fixed;
@@ -70,13 +74,8 @@ border-radius:50px;
 cursor:pointer;
 }
 
-#progress{
+#progress, #volume{
 width:100%;
-}
-
-#volume{
-width:100%;
-margin-top:10px;
 }
 
 .time{
