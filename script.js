@@ -15,6 +15,7 @@ const duration = document.getElementById("duration")
 
 const tracklistDiv = document.getElementById("tracklist")
 const search = document.getElementById("search")
+const genreFilter = document.getElementById("genreFilter")
 
 let playing = false
 let currentIndex = 0
@@ -23,47 +24,77 @@ const tracks = [
 {
 title:"Akwid Type",
 meta:"94 BPM • G Minor • Boom Bap",
+genre:"Rap",
 src:"beats/beat1.mp3"
 },
 {
 title:"Silent Pain",
 meta:"90 BPM • B Minor • Boom Bap",
+genre:"Rap",
 src:"beats/beat2.mp3"
 },
 {
 title:"The Low End Swamp",
 meta:"86 BPM • F# Minor • Boom Bap",
+genre:"Rap",
 src:"beats/beat3.mp3"
-},
-{
-title:"Flow 2000",
-meta:"95 BPM • F Minor • Reggaeton",
-src:"beats/beat4.mp3"
 },
 {
 title:"Ghost Chords",
 meta:"89 BPM • F# Minor • Boom Bap",
+genre:"Rap",
 src:"beats/beat5.mp3"
 },
 {
 title:"Key Pressure",
 meta:"89 BPM • E Minor • Boom Bap",
+genre:"Rap",
 src:"beats/beat6.mp3"
+},
+{
+title:"Flow 2000",
+meta:"95 BPM • F Minor • Reggaeton",
+genre:"Reggaeton",
+src:"beats/beat4.mp3"
 },
 {
 title:"Heart in 808",
 meta:"143 BPM • B Major • Trap",
+genre:"Trap",
 src:"beats/beat7.mp3"
 }
 ]
 
-function renderTracks(filter=""){
+// 🔥 ORDEN PERSONALIZADO
+const order = ["Rap", "Reggaeton", "Trap"]
+
+function renderTracks(){
+
+const text = search.value.toLowerCase()
+const genre = genreFilter.value
 
 tracklistDiv.innerHTML=""
 
-tracks.forEach((track,index)=>{
+const sortedTracks = [...tracks].sort((a,b)=>{
 
-if(!track.title.toLowerCase().includes(filter.toLowerCase())) return
+const aIndex = order.indexOf(a.genre)
+const bIndex = order.indexOf(b.genre)
+
+const aPriority = aIndex === -1 ? 999 : aIndex
+const bPriority = bIndex === -1 ? 999 : bIndex
+
+return aPriority - bPriority
+
+})
+
+sortedTracks.forEach((track)=>{
+
+const index = tracks.indexOf(track)
+
+const matchText = track.title.toLowerCase().includes(text)
+const matchGenre = genre === "" || track.genre === genre
+
+if(!matchText || !matchGenre) return
 
 const div=document.createElement("div")
 div.classList.add("track")
@@ -99,7 +130,7 @@ audio.play().catch(()=>{})
 playing=true
 playBtn.innerText="⏸"
 
-renderTracks(search.value)
+renderTracks()
 
 }
 
@@ -163,9 +194,8 @@ audio.addEventListener("ended",()=>{
 nextBtn.click()
 })
 
-search.addEventListener("input",(e)=>{
-renderTracks(e.target.value)
-})
+search.addEventListener("input",renderTracks)
+genreFilter.addEventListener("change",renderTracks)
 
 window.onload=()=>{
 volume.value=0.7
