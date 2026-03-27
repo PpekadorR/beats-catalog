@@ -31,7 +31,7 @@ src:"beats/beat1.mp3"
 title:"Melancholiah",
 meta:"87 BPM • C Minor • Boom Bap",
 genre:"Rap",
-src:"beats/beat1.mp3"
+src:"beats/beat8.mp3"
 },
 {
 title:"Silent Pain",
